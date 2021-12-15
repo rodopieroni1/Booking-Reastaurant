@@ -64,7 +64,7 @@ public class Restaurant {
 	public void setAddres(String addres) {
 		this.addres = addres;
 	}
-
+	
 	public String getDescription() {
 		return description;
 	}

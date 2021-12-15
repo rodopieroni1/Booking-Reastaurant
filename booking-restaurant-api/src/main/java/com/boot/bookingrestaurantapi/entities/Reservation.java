@@ -13,33 +13,26 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "RESRVATION")
+@Table(name = "RESERVATION")
 public class Reservation {
-	public String getTurn() {
-		return turn;
-	}
-
-	public void setTurn(String turn) {
-		this.turn = turn;
-	}
-
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "ID", unique = true, nullable = false)
 	private Long id;
 	
 	@Column(name = "LOCATOR")
-	private String locator;
+	private String locator;	
 	
 	@Column(name = "TURN")
-	private String turn;
+	private String turn;	
 	
 	@Column(name = "PERSON")
-	private String person;
-
+	private Long person;
+	
 	@Column(name = "DATE")
-	private Date date;
-  
+	private Date date;  
+	
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "RESTAURANT_ID", nullable = false)
 	private Restaurant restaurant;
@@ -60,11 +53,11 @@ public class Reservation {
 		this.locator = locator;
 	}
 
-	public String getPerson() {
+	public Long getPerson() {
 		return person;
 	}
 
-	public void setPerson(String person) {
+	public void setPerson(Long person) {
 		this.person = person;
 	}
 
@@ -83,6 +76,12 @@ public class Reservation {
 	public void setRestaurant(Restaurant restaurant) {
 		this.restaurant = restaurant;
 	}
-	
+	public String getTurn() {
+		return turn;
+	}
+
+	public void setTurn(String turn) {
+		this.turn = turn;
+	}
 	
 }

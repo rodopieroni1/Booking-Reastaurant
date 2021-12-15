@@ -9,12 +9,16 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class ReservationRest {
 	@JsonProperty("restaurantId")
 	private Long restaurantId;
+	
 	@JsonProperty("locator")
 	private String locator;
+	
 	@JsonProperty("date")
 	private Date date;
+	
 	@JsonProperty("person")
 	private String person;
+	
 	@JsonProperty("turnId")
 	private String turnId;
 
